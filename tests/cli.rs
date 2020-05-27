@@ -5,7 +5,7 @@ use support::{binary, binary_with_input};
 
 #[test]
 fn single_line_of_text() {
-    let process = binary_with_input("hello world")
+    let process = binary_with_input(b"hello world")
         .wait_with_output()
         .expect("failed to read from stdout");
 
@@ -15,7 +15,7 @@ fn single_line_of_text() {
 
 #[test]
 fn multiple_lines_of_text() {
-    let process = binary_with_input(include_str!("./fixtures/multiline.txt"))
+    let process = binary_with_input(include_bytes!("./fixtures/multiline.txt"))
         .wait_with_output()
         .expect("failed to read from stdout");
 

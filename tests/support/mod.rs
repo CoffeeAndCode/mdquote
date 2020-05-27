@@ -9,7 +9,7 @@ pub fn binary() -> Command {
     Command::new(command_path)
 }
 
-pub fn binary_with_input(stdin: &str) -> Child {
+pub fn binary_with_input(stdin: &[u8]) -> Child {
     let mut command = binary()
         .stdin(Stdio::piped())
         .stdout(Stdio::piped())
@@ -20,7 +20,7 @@ pub fn binary_with_input(stdin: &str) -> Child {
         .stdin
         .as_mut()
         .expect("failed to open stdin")
-        .write_all(stdin.as_bytes())
+        .write_all(stdin)
         .expect("failed to write to stdin");
     command
 }
