@@ -6,9 +6,7 @@
     unsafe_code
 )]
 
-mod lib;
-
-use lib::quotify;
+use mdquote::quotify;
 use std::io::{self, Read, Write};
 use structopt::StructOpt;
 
