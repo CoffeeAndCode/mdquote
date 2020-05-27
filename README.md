@@ -8,7 +8,7 @@ This package is not pushed to crates.io, but you can install it directly from
 source by running:
 
 ```shell
-cargo install --force mdquote --git https://github.com/CoffeeAndCode/mdquote
+cargo install mdquote --git https://github.com/CoffeeAndCode/mdquote
 ```
 
 ## Development
