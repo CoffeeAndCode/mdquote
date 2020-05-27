@@ -1,4 +1,10 @@
-#![deny(clippy::all, clippy::cargo, clippy::nursery, clippy::pedantic)]
+#![deny(
+    clippy::all,
+    clippy::cargo,
+    clippy::nursery,
+    clippy::pedantic,
+    unsafe_code
+)]
 
 #[allow(clippy::must_use_candidate)]
 pub fn quotify(str: &str) -> String {
