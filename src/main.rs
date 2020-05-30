@@ -6,8 +6,8 @@
     unsafe_code
 )]
 
-use mdquote::quotify;
-use std::io::{self, Read, Write};
+use mdquote::add_quotes;
+use std::io;
 use structopt::StructOpt;
 
 #[derive(StructOpt)]
@@ -19,14 +19,12 @@ use structopt::StructOpt;
 struct Opt {}
 
 fn main() -> io::Result<()> {
-    let mut buffer = String::new();
-    let stdin = io::stdin();
-    let mut handle = stdin.lock();
-
-    handle.read_to_string(&mut buffer)?;
-    io::stdout().write_all(quotify(&buffer).as_bytes())?;
-    io::stdout().write_all(b"\n")?;
-
     Opt::from_args();
+
+    let stdin = io::stdin();
+    let stdout = io::stdout();
+
+    add_quotes(stdin.lock(), stdout.lock(), true)?;
+
     Ok(())
 }

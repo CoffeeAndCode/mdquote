@@ -2,4 +2,4 @@
 
 touch src/lib.rs
 touch src/main.rs
-cargo clippy --all-targets --all-features -- -D warnings
+cargo clippy --all-targets -- -D warnings
