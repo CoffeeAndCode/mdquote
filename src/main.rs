@@ -13,8 +13,8 @@ use std::io;
 /// Add Markdown quotes to the start of each line. For example, "hello world"
 /// would become "> hello world".
 ///
-///  An example of "quoting" your clipboard (depending on your operating
-///  system) would be `pbpaste | mdquote`.
+/// An example of "quoting" your clipboard (depending on your operating
+/// system) would be `pbpaste | mdquote`.
 #[derive(Clap)]
 #[clap(version = env!("CARGO_PKG_VERSION"))]
 struct Opt {}
